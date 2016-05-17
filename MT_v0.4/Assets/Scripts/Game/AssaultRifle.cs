@@ -28,8 +28,11 @@ public class AssaultRifle : BaseWeapon{
 		if (!m_IsMounted)
 		{
 			m_IsWaiting = true;
-			Debug.Log("Shoot");
-			Instantiate(m_ProjectileToShootHandheld, m_MuzzleHandheld.position, m_MuzzleHandheld.rotation);
+			// Debug.Log("Shoot from hand");
+			GameObject bullet = Instantiate(m_ProjectileToShootHandheld, m_MuzzleHandheld.position, m_MuzzleHandheld.rotation) as GameObject;
+			bullet.GetComponent<BaseProjectile>().ShootProjectile(GetSpreadOffsetHandheld());
+			// bullet.m_tr.Rotate(GetSpreadOffsetHandheld());
+			// bullet.m_RB.AddForce(transform.forward * bullet.m_BulletSpeed);
 			m_IsWaiting = true;
 			yield return m_FireRateHandheld;
 			m_IsWaiting = false;
@@ -39,8 +42,11 @@ public class AssaultRifle : BaseWeapon{
 		while (m_IsMounted && m_CanFire && m_AutoFire)
 		{
 				m_IsWaiting = true;
-				Debug.Log("Shoot");
-				Instantiate(m_ProjectileToShootMounted, m_MuzzleMounted.position, m_MuzzleMounted.rotation);
+				// Debug.Log("Shoot from mount");
+				GameObject bullet = Instantiate(m_ProjectileToShootMounted, m_MuzzleMounted.position, m_MuzzleMounted.rotation) as GameObject;
+				bullet.GetComponent<BaseProjectile>().ShootProjectile(GetSpreadOffsetMounted());
+				// bullet.m_tr.Rotate(GetSpreadOffsetMounted());
+				// bullet.m_RB.AddForce(transform.forward * bullet.m_BulletSpeed);
 				m_IsWaiting = true;
 				yield return m_FireRateMounted;
 				m_IsWaiting = false;

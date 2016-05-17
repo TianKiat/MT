@@ -15,16 +15,19 @@ public class BaseWeapon : BaseInteractable, IWeapon {
 	[HeaderAttribute("Projectiles")]
 	public GameObject m_ProjectileToShootHandheld;
 	public GameObject m_ProjectileToShootMounted;
+	// [HideInInspector]public BaseProjectile m_ProjectileHandheld;
+	// [HideInInspector]public BaseProjectile m_ProjectileMounted;
+	[HeaderAttribute("Basic firing settings")]
+	public float m_BulletSpreadHandheld;
+	public float m_BulletSpreadMounted;
+	public int m_RoundsPerSecondHandheld;
+	public int m_RoundsPerSecondMounted;
 	
 	[HeaderAttribute("Mounted Settings")]
 	public bool m_AutoFire;
 	[HideInInspector]public bool m_CanFire;
 	[HideInInspector]public List<BaseEnemy> m_CurrentEnemiesInRange = new List<BaseEnemy>();
 	[HideInInspector]public BaseEnemy m_CurrentEnemyToKill;
-	
-	[HeaderAttribute("Rate of Fire")]
-	public int m_RoundsPerSecondHandheld;
-	public int m_RoundsPerSecondMounted;
 	
 	[HeaderAttribute("Form references")]
 	public Transform m_MuzzleHandheld;
@@ -39,6 +42,8 @@ public class BaseWeapon : BaseInteractable, IWeapon {
 	[HideInInspector]public bool m_IsMounted = false;
 
 	void Start() {
+		// m_ProjectileHandheld = m_ProjectileToShootHandheld.GetComponent<BaseProjectile>();
+		// m_ProjectileMounted = m_ProjectileToShootMounted.GetComponent<BaseProjectile>();
 		m_FireRateHandheld = new WaitForSeconds(1/m_RoundsPerSecondHandheld);
 		m_FireRateMounted = new WaitForSeconds(1/m_RoundsPerSecondMounted);
 		m_IsWaiting = false;
@@ -56,6 +61,7 @@ public class BaseWeapon : BaseInteractable, IWeapon {
 		{
 			//unmount
 			m_IsMounted = false;
+			m_IsWaiting = false;
 			StartCoroutine(TransformWeapon(m_IsMounted));
 		}
 		else if (!m_IsMounted)
@@ -99,6 +105,24 @@ public class BaseWeapon : BaseInteractable, IWeapon {
 // 		m_CurrentEnemiesInRange.Sort(new SortByDistance());
 // 		return m_CurrentEnemiesInRange[0];
 // 	}
+	//get bullet spread handheld
+	public Vector3 GetSpreadOffsetHandheld() {
+		float _x = Random.Range(-m_BulletSpreadHandheld, m_BulletSpreadHandheld);
+		float _y = Random.Range(-m_BulletSpreadHandheld, m_BulletSpreadHandheld);
+		float _z = Random.Range(-m_BulletSpreadHandheld, m_BulletSpreadHandheld);
+		Vector3 _rotation = new Vector3(_x, _y, _z);
+		
+		return _rotation;
+	}
+	//get bullet spread mounted
+	public Vector3 GetSpreadOffsetMounted() {
+		float _x = Random.Range(-m_BulletSpreadMounted, m_BulletSpreadMounted);
+		float _y = Random.Range(-m_BulletSpreadMounted, m_BulletSpreadMounted);
+		float _z = Random.Range(-m_BulletSpreadMounted, m_BulletSpreadMounted);
+		Vector3 _rotation =  new Vector3(_x, _y, _z);
+		
+		return _rotation;
+	}
 }
 
 // public class SortByDistance : IComparer<BaseEnemy> {
