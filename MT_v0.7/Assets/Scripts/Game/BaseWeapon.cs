@@ -12,6 +12,7 @@ using System.Collections.Generic;
 
 [RequireComponent(typeof(Rigidbody))]
 <<<<<<< HEAD
+<<<<<<< HEAD
 public class BaseWeapon : BaseInteractable, IWeapon {
 	[HeaderAttribute("Projectiles")]
 	public GameObject m_ProjectileToShootHandheld;
@@ -112,6 +113,8 @@ public class BaseWeapon : BaseInteractable, IWeapon {
 		float _y = Random.Range(-m_BulletSpreadHandheld, m_BulletSpreadHandheld);
 		float _z = Random.Range(-m_BulletSpreadHandheld, m_BulletSpreadHandheld);
 =======
+=======
+>>>>>>> master
 [RequireComponent(typeof(AudioSource))]
 public class BaseWeapon : BaseInteractable, IWeapon {
 	
@@ -165,11 +168,15 @@ public class BaseWeapon : BaseInteractable, IWeapon {
 		float _x = Random.Range(-m_BulletSpread, m_BulletSpread);
 		float _y = Random.Range(-m_BulletSpread, m_BulletSpread);
 		float _z = Random.Range(-m_BulletSpread, m_BulletSpread);
+<<<<<<< HEAD
 >>>>>>> origin/Feature_Branch
+=======
+>>>>>>> master
 		Vector3 _rotation = new Vector3(_x, _y, _z);
 		
 		return _rotation;
 	}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	//get bullet spread mounted
 	public Vector3 GetSpreadOffsetMounted() {
@@ -192,9 +199,14 @@ public class BaseWeapon : BaseInteractable, IWeapon {
 //  	}
 //  }
 =======
+=======
+>>>>>>> master
 	// Call this method to rumble the hand controllers
 	public virtual void RumbleRecoil() {
 		//implement this method when you get steamVR working
 	}
 }
+<<<<<<< HEAD
 >>>>>>> origin/Feature_Branch
+=======
+>>>>>>> master

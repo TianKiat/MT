@@ -14,6 +14,7 @@ public class WeaponSlot : MonoBehaviour {
 	public bool m_IsEquipped;
 	//Mount the weapon from players hand to weapon slot
 <<<<<<< HEAD
+<<<<<<< HEAD
 	public void Mount(GameObject _Weapon) 
 	{
 		//get weapon component
@@ -36,6 +37,8 @@ public class WeaponSlot : MonoBehaviour {
 		m_IsEquipped = false;
 	}
 =======
+=======
+>>>>>>> master
 	// public void Mount(GameObject _Weapon) 
 	// {
 	// 	//get weapon component
@@ -57,5 +60,8 @@ public class WeaponSlot : MonoBehaviour {
 	// 	m_EquippedWeapon = null;
 	// 	m_IsEquipped = false;
 	// }
+<<<<<<< HEAD
 >>>>>>> origin/Feature_Branch
+=======
+>>>>>>> master
 }

@@ -10,9 +10,13 @@
 interface IWeapon
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	void Mount();
 =======
 	// void Mount();
 >>>>>>> origin/Feature_Branch
+=======
+	// void Mount();
+>>>>>>> master
 	void Shoot();
 }

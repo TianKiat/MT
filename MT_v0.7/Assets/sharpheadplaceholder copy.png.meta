@@ -46,10 +46,14 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
 <<<<<<< HEAD
+<<<<<<< HEAD
   alphaIsTransparency: 0
 =======
   alphaIsTransparency: 1
 >>>>>>> origin/Feature_Branch
+=======
+  alphaIsTransparency: 1
+>>>>>>> master
   textureType: -1
   buildTargetSettings: []
   spriteSheet:

@@ -12,6 +12,7 @@ using System.Collections;
 public class AssaultRifle : BaseWeapon{
 	
 <<<<<<< HEAD
+<<<<<<< HEAD
 	// void OnTriggerEnter(Collider other) {
 	// 	if(other.gameObject.CompareTag("Enemy")) 
 	// 	{
@@ -55,6 +56,8 @@ public class AssaultRifle : BaseWeapon{
 		}
 		yield return null;
 =======
+=======
+>>>>>>> master
 	public override IEnumerator ShootRoutine() {
 			m_IsWaiting = true;
 			// Debug.Log("Shoot from hand");
@@ -63,6 +66,9 @@ public class AssaultRifle : BaseWeapon{
 			m_IsWaiting = true;
 			yield return m_FireRate;
 			m_IsWaiting = false;
+<<<<<<< HEAD
 >>>>>>> origin/Feature_Branch
+=======
+>>>>>>> master
 	}
 }

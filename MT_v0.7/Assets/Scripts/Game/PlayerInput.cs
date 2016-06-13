@@ -11,6 +11,7 @@ using System.Collections;
 
 public class PlayerInput : MonoBehaviour {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	public BaseWeapon m_CurrentWeapon;
 	public Transform m_HandTransform;
 	public KeyCode m_WeaponFireKey;
@@ -69,6 +70,8 @@ public class PlayerInput : MonoBehaviour {
 					}
 				}
 =======
+=======
+>>>>>>> master
 
 	public KeyCode m_HandheldWeaponFireKey;
 	public KeyCode m_ShotGunWeaponFireKey;
@@ -100,7 +103,10 @@ public class PlayerInput : MonoBehaviour {
 			else
 			{
 				Debug.Log("No shotgun weapon you little shit!");
+<<<<<<< HEAD
 >>>>>>> origin/Feature_Branch
+=======
+>>>>>>> master
 			}
 		}
 	}
